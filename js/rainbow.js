@@ -59,5 +59,19 @@ $(document).ready(function() {
 
   var time = Date.now();
   setInterval(run, 20);
-console.log('arf');
+
+  /* Our random score generator */
+  var UIScore = $('#score');
+  var score = 0;
+
+  function increaseScoreSystem(val) {
+      score += val;
+      UIScore.html(score);
+  }
+
+  setInterval(function() {
+      var num = Math.floor(Math.random() * 6) + 1;
+      increaseScoreSystem(num);
+  }, 1500);
+
 });
