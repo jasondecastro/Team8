@@ -4,18 +4,7 @@ $(document).ready(function() {
   var url = "";
 
   startGame = function() {
-    var phoneNumber =  
-      $('#phone').val();
-    var data = {'phoneNumber': phoneNumber};
-  
-    console.log(phoneNumber);
-    $.ajax({
-     url: url,
-     type: 'POST',
-     contentType:'application/json',
-     data: JSON.stringify(data),
-     dataType:'json'
-    });
+    $('#phone-form').submit();
     
     window.location.replace("game.html");
   }
