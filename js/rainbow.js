@@ -4,7 +4,7 @@ $(document).ready(function() {
   var ctx = canvas.getContext('2d');
 
   canvas.height = 700;
-  canvas.width = 1200;
+  canvas.width = $("#game").width();
  
   var mySanta = {
       x: 600,
