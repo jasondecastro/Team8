@@ -38,7 +38,7 @@ $(document).ready(function() {
            }     
       }     
       if (keys[37]) {         
-          // left arrow         
+          // left arrow      
           if (player.velX > -player.speed) {
               player.velX--;
           }
@@ -108,5 +108,9 @@ $(document).ready(function() {
       var num = 1; // Math.floor(Math.random() * 6) + 1;
       increaseScoreSystem(num);
   }, 1000);
+
+  pauseGame = function() {
+    alert('Paused!');
+  }
 
 });
