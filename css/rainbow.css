@@ -34,11 +34,11 @@
 #game {
   height: 500px;
   width:100%;
-  background-color: skyblue;
+  background:url(../images/backgroround.jpg);
 }
 #bricks{
   height: 50px;
-  background-color: brown;
+  background: url(../images/boostanim.gif);
 }
 #clouds {
   height:44px;
