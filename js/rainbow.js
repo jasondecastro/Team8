@@ -105,8 +105,8 @@ $(document).ready(function() {
   }
 
   setInterval(function() {
-      var num = Math.floor(Math.random() * 6) + 1;
+      var num = 1; // Math.floor(Math.random() * 6) + 1;
       increaseScoreSystem(num);
-  }, 1500);
+  }, 1000);
 
 });
