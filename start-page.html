@@ -22,10 +22,10 @@
   
 </ol>
       <form id="phone-form">
-        your phone number: <input id="phone" type="text"><br>
+        your phone number: {{ form.number(placeholder="Enter your phone number") }}<br>
       </form>
       </div>
-            <button type="button" class="btn-lg btn-success" onclick="startGame()">Start</button>
+            <button id = "start" type="button" class="btn-lg btn-success" onclick="startGame()">Start</button>
 
  </div>
 </body>
