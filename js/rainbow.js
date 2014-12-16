@@ -47,6 +47,9 @@ $(document).ready(function() {
         imageObj.src = 'http://www.sumoware.com/images/temp/xzhscmemgbsnrjrc.png';
       }
       ctx.fillStyle = 'skyblue';
+      if (canvas.width !== $("#game").width()) {
+        canvas.width = $("#game").width();
+      }
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   }
