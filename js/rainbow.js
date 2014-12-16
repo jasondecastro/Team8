@@ -2,14 +2,22 @@
 $(document).ready(function() {
   var canvas = document.getElementById("game"),
       ctx = canvas.getContext("2d");
+
+  var friction = 0.8,
+      gravity = 0.4;
   
   canvas.height = 700;
   canvas.width = $("#game").width();
 
   var mySanta = {
       x: 600,
-      y: 600,
+      y: 630,
+      velY: 0,
+      velX: 0,
+      height: 70,
+      width: 70,
       speed: 400,
+      jumping: false,
   };
    
   var keysDown = {};
@@ -21,6 +29,14 @@ $(document).ready(function() {
   });
    
   function update(mod) {
+      if (38 in keysDown) {
+          // up arrow
+        if(!mySanta.jumping){
+         mySanta.jumping = true;
+         mySanta.velY = -mySanta.speed*mod*1.5;
+        }
+      }
+
       if (37 in keysDown) {
           mySanta.x -= mySanta.speed * mod;
       }
@@ -36,6 +52,24 @@ $(document).ready(function() {
       //if (40 in keysDown) {
         //  mySanta.y += mySanta.speed * mod;
      // }
+
+      mySanta.velX *= friction;
+   
+      mySanta.velY += gravity;
+   
+      mySanta.x += mySanta.velX;
+      mySanta.y += mySanta.velY;
+
+      if (mySanta.x >= canvas.width-mySanta.width) {
+          mySanta.x = canvas.width-mySanta.width;
+      } else if (mySanta.x <= 0) {
+          mySanta.x = 0;
+      }
+
+      if(mySanta.y >= canvas.height-mySanta.height){
+          mySanta.y = canvas.height - mySanta.height;
+          mySanta.jumping = false;
+      }
   }
    
   function render() {
